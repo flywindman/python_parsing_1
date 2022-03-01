@@ -1,0 +1,67 @@
+<!-- ngIf: ::lot.showViewOnlyOverlay && auction.state=='READY' -->
+<div class="lot-badge ng-isolate-scope ru house with-bid" ng-class="lang" lot="::lot" style="background-color: rgb(17, 17, 17); display: block;">
+	<div class="text">Литфонд <span dir="ltr">(15.2.18)</span>
+		<br>
+			<b class="bid-label-part">Продан за: 22 000р</b>
+		</div>
+	</div>
+	<!-- ngIf: ::lot.searchScore && devMode -->
+	<div class="item-bottom-part">
+		<div class="above-separator">
+			<!-- ngIf: ::lot.itemIndex -->
+			<span class="lot-number ng-binding ng-scope" ng-if="::lot.itemIndex"> ЛОТ <span itemprop="sku" class="ng-binding">226</span>: </span>
+			<!-- end ngIf: ::lot.itemIndex -->
+			<!-- ngIf: :: lot.extraInfo=='overseas' -->
+			<!-- ngIf: ::!(allowLargeItemsDisplay && lot.largeDisplay) -->
+			<span itemprop="name" ng-if="::!(allowLargeItemsDisplay &amp;&amp; lot.largeDisplay)" ng-bind-html=":: lot | lotText: 70 " class="ng-binding ng-scope">
+				<span class="lot-name">Александрова-Игнатьева, П.П. Практические основы кулинарного ... </span>
+			</span>
+			<!-- end ngIf: ::!(allowLargeItemsDisplay && lot.largeDisplay) -->
+			<!-- ngIf: ::allowLargeItemsDisplay && lot.largeDisplay -->
+		</div>
+		
+		# тут содержится ссылка на страницу лота. С нее можно выдернуть полную информацию
+		<a itemprop="url" class="orange common-button ru" ng-href="/ui/lotPage/source/search/auction/3132/lot/115572/Александрова-Игнатьева-П-П?lang=ru" ng-hide="lot.published==false" href="https://ru.bidspirit.com/ui/lotPage/source/search/auction/3132/lot/115572/%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B0-%D0%98%D0%B3%D0%BD%D0%B0%D1%82%D1%8C%D0%B5%D0%B2%D0%B0-%D0%9F-%D0%9F?lang=ru">
+			#
+			#
+			# стартовая цена продажи нет
+			<div class="lot-price-label exact-price ng-binding">Стартовая цена:</div>
+			<div class="lot-price-value ng-binding" bs-auto-font-size="{grow:false,minSize:11,maxWidth:maxWidth}" ng-bind-html="::exactPrice">
+				<meta itemprop="price" content="100">100<meta itemprop="priceCurrency" content="RUB">p</div>
+				#
+				#
+				#
+				#
+				#  а этот продан
+					<div class="lot-badge ng-isolate-scope ru sold" ng-class="lang" lot="::lot" style="display: block;">
+						<div class="text">Продан за: <b>100p</b>
+						</div>
+					</div>
+					<!-- ngIf: ::lot.searchScore && devMode -->
+					<div class="item-bottom-part">
+						<div class="above-separator">
+							<!-- ngIf: ::lot.itemIndex -->
+							<span class="lot-number ng-binding ng-scope" ng-if="::lot.itemIndex"> ЛОТ <span itemprop="sku" class="ng-binding">5</span>: </span>
+							<!-- end ngIf: ::lot.itemIndex -->
+							<!-- ngIf: :: lot.extraInfo=='overseas' -->
+							<!-- ngIf: ::!(allowLargeItemsDisplay && lot.largeDisplay) -->
+							<span itemprop="name" ng-if="::!(allowLargeItemsDisplay &amp;&amp; lot.largeDisplay)" ng-bind-html=":: lot | lotText: 70 " class="ng-binding ng-scope">
+								<span class="lot-name">1 копейка 1915. </span>Состояние VF.</span>
+							<!-- end ngIf: ::!(allowLargeItemsDisplay && lot.largeDisplay) -->
+							<!-- ngIf: ::allowLargeItemsDisplay && lot.largeDisplay -->
+						</div>
+						<div class="short-separator"/>
+						<div class="below-separator" bs-text-direction="" dir="ltr">
+							<!-- ngIf: ::lot.published==false -->
+							<!-- ngIf: lot.purchase || !lot.leadingBid || lot.leadingBid.underReserved -->
+							<div class="price-container ng-scope" ng-if="lot.purchase || !lot.leadingBid || lot.leadingBid.underReserved">
+								<div class="lot-price ng-isolate-scope" lot="::lot" max-width="125" single-row="true" break-on-row="false">
+									<!-- ngIf: ::showExactPrice -->
+									<div class="lot-price-row ng-scope" ng-if="::showExactPrice">
+										<div class="lot-price-label exact-price ng-binding">Стартовая цена:</div>
+										<div class="lot-price-value ng-binding" bs-auto-font-size="{grow:false,minSize:11,maxWidth:maxWidth}" ng-bind-html="::exactPrice">
+											<meta itemprop="price" content="100">100<meta itemprop="priceCurrency" content="RUB">p</div>
+												<!-- ngIf: ::breakOnRow -->
+												<div class="clearfix ng-scope" ng-if="::breakOnRow"/>
+												<!-- end ngIf: ::breakOnRow -->
+											</div>
